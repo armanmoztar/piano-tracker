@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const piecesSchema = new Schema({
+const pianoSessionSchema = new Schema({
   username: { type: String, required: true },
   description: { type: String, required: true },
   duration: { type: Number, required: true },
@@ -11,6 +11,6 @@ const piecesSchema = new Schema({
   timestamps: true,
 });
 
-const Piece = mongoose.model('Piece', piecesSchema);
+const pianoSessionModel = mongoose.model('pianolog', pianoSessionSchema);
 
-module.exports = Piece;
+module.exports = pianoSessionModel;

@@ -20,6 +20,13 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully");
 })
 
+// Load routes
+const pianoSessionRouter = require('./routes/exercises');
+const usersRouter = require('./routes/users');
+
+app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
+
 // Server listening on port 3000
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
