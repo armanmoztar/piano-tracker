@@ -11,9 +11,9 @@ router.route('/').get((req, res) => {
 // handles incoming HTTP POST requests on the /users/add/ URL path
 router.route('/add').post((req, res) => {
   const username = req.body.username;
-
   const newUser = new User({username});
 
+  // save the new user to the database
   newUser.save()
     .then(() => res.json('User added!'))
     .catch(err => res.status(400).json('Error: ' + err));

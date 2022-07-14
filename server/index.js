@@ -21,10 +21,10 @@ connection.once('open', () => {
 })
 
 // Load routes
-const pianoSessionRouter = require('./routes/exercises');
-const usersRouter = require('./routes/users');
+const pianoSessionRouter = require('./routes/piano-session.js');
+const usersRouter = require('./routes/users.js');
 
-app.use('/exercises', exercisesRouter);
+app.use('/piano-log', pianoSessionRouter);
 app.use('/users', usersRouter);
 
 // Server listening on port 3000
