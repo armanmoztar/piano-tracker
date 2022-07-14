@@ -21,8 +21,38 @@ router.route('/add').post((req, res) => {
   });
 
   newPianoSession.save()
-  .then(() => res.json('Piano Session logged!'))
+  .then(() => res.json('Piano session logged!'))
   .catch(err => res.status(400).json('Error: ' + err));
+});
+
+// returns a piano log item given an id
+router.route('/:id').get((req, res) => {
+  PianoSession.findById(req.params.id)
+    .then(pianoSession => res.json(pianoSession))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+// deletes a piano log item given an id
+router.route('/:id').delete((req, res) => {
+  PianoSession.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Piano session deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+// update existing piano log item in the database
+router.route('/update/:id').post((req, res) => {
+  PianoSession.findById(req.params.id)
+    .then(pianoSession => {
+      pianoSession.username = req.body.username;
+      pianoSession.description = req.body.description;
+      pianoSession.duration = Number(req.body.duration);
+      pianoSession.date = Date.parse(req.body.date);
+
+      pianoSession.save()
+        .then(() => res.json('Piano session updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    })
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;
