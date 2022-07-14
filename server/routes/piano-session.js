@@ -3,7 +3,7 @@ let PianoSession = require('../models/piano-session.model');
 
 router.route('/').get((req, res) => {
   PianoSession.find()
-    .then(pianolog => res.json(pianolog))
+    .then(pianoLog => res.json(pianoLog))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 

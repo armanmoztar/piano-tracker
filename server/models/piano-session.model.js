@@ -11,6 +11,6 @@ const pianoSessionSchema = new Schema({
   timestamps: true,
 });
 
-const pianoSessionModel = mongoose.model('pianolog', pianoSessionSchema);
+const pianoSessionModel = mongoose.model('pianoLog', pianoSessionSchema);
 
 module.exports = pianoSessionModel;
