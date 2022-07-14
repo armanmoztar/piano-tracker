@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+// Create pianoSession Schema
 const pianoSessionSchema = new Schema({
   username: { type: String, required: true },
   description: { type: String, required: true },

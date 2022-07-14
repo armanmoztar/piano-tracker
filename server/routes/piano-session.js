@@ -7,6 +7,7 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+// handles incoming HTTP POST requests on the /users/add/ URL path
 router.route('/add').post((req, res) => {
   const username = req.body.username;
   const description = req.body.description;
@@ -20,6 +21,7 @@ router.route('/add').post((req, res) => {
     date,
   });
 
+// save the new user to the database
   newPianoSession.save()
   .then(() => res.json('Piano session logged!'))
   .catch(err => res.status(400).json('Error: ' + err));
