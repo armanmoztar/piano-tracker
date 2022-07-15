@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class CreateUser extends Component {
+  // Add constructor with bindings
   constructor(props) {
     super(props);
     this.onChangeUsername = this.onChangeUsername.bind(this);
@@ -11,6 +12,7 @@ export default class CreateUser extends Component {
     };
   }
 
+  // methods to change the username and submit the form
   onChangeUsername(e) {
   this.setState({
     username: e.target.value
@@ -22,6 +24,9 @@ export default class CreateUser extends Component {
     username: this.state.username,
     };
     console.log(newUser);
+
+    // Sends HTTP POST request to the server. The endpoint expects a JSON Object in request body
+    // so we pass the newUser object as second argument
     axios.post('http://localhost:3000/users/add', newUser)
       .then(res => console.log(res.data));
   

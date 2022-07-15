@@ -15,12 +15,15 @@ const PianoSession = props => (
 )
 
 export default class PianoLog extends Component {
+  // Constructor to initialize the state with an empty pianolog array
 constructor(props) {
   super(props);
   this.deletePianoSession = this.deletePianoSession.bind(this);
   this.state = {pianolog: []};
   }
 
+  // Get the piano logs from the database
+  // Code will run before page is rendered
   componentDidMount() {
   axios.get('http://localhost:3000/piano-log/')
    .then(response => {
@@ -31,19 +34,22 @@ constructor(props) {
    })
   }
 
+  // Component will allow users to delete piano logs
   deletePianoSession(id) {
   axios.delete('http://localhost:3000/piano-log/'+id)
     .then(res => console.log(res.data));
   this.setState({
     pianolog: this.state.pianolog.filter(el => el._id !== id)
-  })
+    })
   }
 
-pianoLog() {
-  return this.state.pianolog.map(currentpianosession => {
-    return <PianoSession pianosession={currentpianosession} deletePianoSession={this.deletePianoSession} key={currentpianosession._id}/>;
-  })
-}
+  // Iterates through the list of piano log items by using the map function
+  // and returns the rows of the table
+  pianoLog() {
+    return this.state.pianolog.map(currentpianosession => {
+      return <PianoSession pianosession={currentpianosession} deletePianoSession={this.deletePianoSession} key={currentpianosession._id}/>;
+    })
+  }
 
   render() {
     return (
