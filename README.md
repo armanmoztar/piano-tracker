@@ -15,7 +15,7 @@ This application allows users to track their piano sessions by inputting dates, 
 
 ### To Run Application
 
-First, you would need to create an account on MongoDB and retrieve your MongoDB credentials. You need to connect your cluster to your application by creating a `.env` file in the server directory of your application.
+First, you would need to create an account on MongoDB Atlas and retrieve your MongoDB credentials. You need to connect your cluster to your application by creating a `.env` file in the server directory of your application.
 
 In your .env file it should look like this:
 > ATLAS_URI= mongodb+srv://database:yourpassword@usercluster.xiiyv.mongodb.net/?retryWrites=true&w=majority
