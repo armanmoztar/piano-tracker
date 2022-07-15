@@ -4,22 +4,22 @@ import axios from 'axios';
 
 const PianoSession = props => (
   <tr>
-    <td>{props.pianosession.username}</td>
-    <td>{props.pianosession.description}</td>
-    <td>{props.pianosession.duration}</td>
-    <td>{props.pianosession.date.substring(0,10)}</td>
+    <td>{props.pianoSession.username}</td>
+    <td>{props.pianoSession.description}</td>
+    <td>{props.pianoSession.duration}</td>
+    <td>{props.pianoSession.date.substring(0,10)}</td>
     <td>
-      <Link to={"/edit/"+props.pianosession._id}>edit</Link> | <a href="#" onClick={() => { props.deletePianoSession(props.pianosession._id) }}>delete</a>
+      <Link to={"/edit/"+props.pianoSession._id}>edit</Link> | <a href="#" onClick={() => { props.deletePianoSession(props.pianoSession._id) }}>delete</a>
     </td>
   </tr>
 )
 
 export default class PianoLog extends Component {
-  // Constructor to initialize the state with an empty pianolog array
+  // Constructor to initialize the state with an empty pianoLog array
 constructor(props) {
   super(props);
   this.deletePianoSession = this.deletePianoSession.bind(this);
-  this.state = {pianolog: []};
+  this.state = {pianoLog: []};
   }
 
   // Get the piano logs from the database
@@ -27,7 +27,7 @@ constructor(props) {
   componentDidMount() {
   axios.get('http://localhost:3000/piano-log/')
    .then(response => {
-     this.setState({ pianolog: response.data });
+     this.setState({ pianoLog: response.data });
    })
    .catch((error) => {
       console.log(error);
@@ -39,15 +39,15 @@ constructor(props) {
   axios.delete('http://localhost:3000/piano-log/'+id)
     .then(res => console.log(res.data));
   this.setState({
-    pianolog: this.state.pianolog.filter(el => el._id !== id)
+    pianoLog: this.state.pianoLog.filter(el => el._id !== id)
     })
   }
 
   // Iterates through the list of piano log items by using the map function
   // and returns the rows of the table
   pianoLog() {
-    return this.state.pianolog.map(currentpianosession => {
-      return <PianoSession pianosession={currentpianosession} deletePianoSession={this.deletePianoSession} key={currentpianosession._id}/>;
+    return this.state.pianoLog.map(currentpianosession => {
+      return <PianoSession pianoSession={currentpianosession} deletePianoSession={this.deletePianoSession} key={currentpianosession._id}/>;
     })
   }
 

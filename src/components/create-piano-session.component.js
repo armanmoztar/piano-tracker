@@ -78,17 +78,17 @@ export default class CreatePianoSession extends Component {
     // prevents default HTML form submit behavior from taking place
     e.preventDefault();
   
-    const pianosession = {
+    const pianoSession = {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
       date: this.state.date,
     };
   
-    console.log(pianosession);
+    console.log(pianoSession);
 
-    // send request to backend to create a new pianosession
-    axios.post('http://localhost:3000/piano-log/add', pianosession)
+    // send request to backend to create a new pianoSession
+    axios.post('http://localhost:3000/piano-log/add', pianoSession)
       .then(res => console.log(res.data));
     
     window.location = '/';
@@ -97,7 +97,7 @@ export default class CreatePianoSession extends Component {
   render() {
     return (
       <div>
-        <h3>Create New Piano Session Log</h3>
+        <h3>Log New Piano Session</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
             <label>Username: </label>
@@ -145,7 +145,7 @@ export default class CreatePianoSession extends Component {
           </div>
 
           <div className="form-group">
-            <input type="submit" value="Create Piano Session Log" className="btn btn-primary" />
+            <input type="submit" value="Log Piano Session" className="btn btn-primary" />
           </div>
         </form>
       </div>

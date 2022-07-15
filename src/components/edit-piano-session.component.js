@@ -78,17 +78,17 @@ export default class EditPianoSession extends Component {
     // prevents default HTML form submit behavior from taking place
     e.preventDefault();
 
-    const pianosession = {
+    const pianoSession = {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
       date: this.state.date,
     };
 
-    console.log(pianosession);
+    console.log(pianoSession);
 
-    // send request to backend to create a new pianosession
-    axios.post('http://localhost:3000/piano-log/update/'+this.props.match.params.id, pianosession)
+    // send request to backend to create a new pianoSession
+    axios.post('http://localhost:3000/piano-log/update/'+this.props.match.params.id, pianoSession)
       .then(res => console.log(res.data));
     
     window.location = '/';
