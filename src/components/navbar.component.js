@@ -13,7 +13,7 @@ export default class Navbar extends Component {
           <Link to="/" className="nav-link">Piano Sessions</Link>
           </li>
           <li className="navbar-item">
-          <Link to="/create" className="nav-link">Create Piano Session Log</Link>
+          <Link to="/create" className="nav-link">Create Piano Session</Link>
           </li>
           <li className="navbar-item">
           <Link to="/user" className="nav-link">Create User</Link>
