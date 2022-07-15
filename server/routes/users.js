@@ -1,5 +1,5 @@
 const router = require('express').Router();
-let User = require('../models/user.model');
+let User = require('../models/user.model.js');
 
 // handles incoming HTTP GET requests on the /users/ URL path
 router.route('/').get((req, res) => {
@@ -15,7 +15,7 @@ router.route('/add').post((req, res) => {
 
   // save the new user to the database
   newUser.save()
-    .then(() => res.json('User added!'))
+    .then(() => res.json('User has been added!'))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
