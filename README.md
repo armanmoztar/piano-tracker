@@ -9,7 +9,7 @@ This application allows users to track their piano sessions by inputting dates, 
 - Tied the backend of the application to MongoDB Atlas where our database and cluster is stored
 - Created a schema for the database using the [mongoose](https://mongoosejs.com/) library for User and Piano Sessions
 - Created an Express server for the backend, attached the cors and express.json middleware (since we will be sending and receiving json), and connected it to the database
-- Added API endpoints routes to communicate with the database using incoming HTTP, GET, or POST requests
+- Added API endpoints routes to communicate with the database using incoming HTTP, GET, and POST requests
 - Used Postman to test the API endpoint routes
 - Installed Axios library to send HTTP requests to the backend allowing to create new users and piano sessions in the database
 
