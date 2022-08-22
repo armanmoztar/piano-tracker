@@ -1,6 +1,6 @@
 ## Piano-Tracker
 
-This application allows users to track their piano sessions by inputting dates, description, and duration. The user can keep track of their activity by viewing the data they have entered in order to see how much time they have spent on the piano.
+This application allows users to track their piano sessions by inputting dates, descriptions, and durations. The user can keep track of their activity by viewing the data they have entered in order to see how much time they have spent on the piano.
 
 
 ### Functionality:
