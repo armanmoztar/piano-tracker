@@ -40,3 +40,7 @@ npm start
 ```
 
 This will start the react app and now you can log and track your piano sessions and activities.
+
+<img width="1374" alt="Screenshot 2022-10-25 at 7 58 59 AM" src="https://user-images.githubusercontent.com/75223820/197809203-199d9e2f-ce8e-4cd6-a48f-ef1e49056769.png">
+
+
