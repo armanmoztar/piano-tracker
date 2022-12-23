@@ -20,11 +20,10 @@ First, you would need to create an account on MongoDB Atlas and retrieve your Mo
 In your .env file it should look like this:
 > ATLAS_URI= mongodb+srv://database:yourpassword@usercluster.xiiyv.mongodb.net/?retryWrites=true&w=majority
 
-*Make sure you have added your ip address to the MongoDB cluster in the 'Network Access' section of the cluster's dashboard.*
+*Make sure you have added your ip address to the MongoDB cluster in the 'Network Access' section of the cluster's dashboard, and that your env file is in the server directory before proceeding*
 
 
-Once that is set up, type the following to start the server and connection to your Mongo database:
-*Make sure you have your env file ready in the server directory before proceeding
+Once that is set up, type the following to start the server and connection to your Mongo database: 
 
 ```
 cd server
