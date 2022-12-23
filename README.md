@@ -23,7 +23,8 @@ In your .env file it should look like this:
 *Make sure you have added your ip address to the MongoDB cluster in the 'Network Access' section of the cluster's dashboard.*
 
 
-Once that is set up, cd into the server directory and type the following:
+Once that is set up, type the following to start the server and connection to your Mongo database:
+*Make sure you have your env file ready in the server directory before proceeding
 
 ```
 cd server
@@ -36,6 +37,7 @@ This will install all the dependencies and start the server.
 Finally, to run the react app, go back into the root directory of the application and type:
 
 ```
+npm install
 npm start
 ```
 
