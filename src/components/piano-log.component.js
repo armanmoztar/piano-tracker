@@ -9,7 +9,7 @@ const PianoSession = props => (
     <td>{props.pianoSession.duration}</td>
     <td>{props.pianoSession.date.substring(0,10)}</td>
     <td>
-      <Link to={"/edit/"+props.pianoSession._id}>edit</Link> | <a href="#" onClick={() => { props.deletePianoSession(props.pianoSession._id) }}>delete</a>
+      <Link to={"/edit/"+props.pianoSession._id}>Edit</Link> | <a href="#" onClick={() => { props.deletePianoSession(props.pianoSession._id) }}>Delete</a>
     </td>
   </tr>
 )
@@ -54,13 +54,13 @@ constructor(props) {
   render() {
     return (
       <div>
-        <h3>Logged Piano Dates</h3>
+        <h3>Logged Piano Sessions</h3>
         <table className="table">
           <thead className="thead-light">
             <tr>
               <th>Username</th>
               <th>Description</th>
-              <th>Duration</th>
+              <th>Duration (minutes)</th>
               <th>Date</th>
               <th>Comments</th>
             </tr>
